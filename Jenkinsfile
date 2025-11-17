@@ -7,7 +7,7 @@ pipeline {
         // Docker Hub
         DOCKER_IMAGE = "wizzidevs/php-app"
         DOCKER_TAG = "latest"
-        DOCKER_CREDENTIALS = "dockerhub-credentials"
+        DOCKER_CREDENTIALS = "docker-hub-azure"
 
         // Azure
         ACR_LOGIN = "appspraktikum.azurecr.io"
