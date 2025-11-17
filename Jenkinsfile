@@ -31,12 +31,12 @@ pipeline {
                     docker build -t ${DOCKER_IMAGE}:test .
 
                     docker rm -f ${APP_NAME}_test 2>/dev/null || true
-                    docker run -d --rm -p 8080:80 --name ${APP_NAME}_test ${DOCKER_IMAGE}:test
+                    docker run -d --rm -p 8090:80 --name ${APP_NAME}_test ${DOCKER_IMAGE}:test
 
                     sleep 5
 
                     echo "Health checking container..."
-                    curl -f http://localhost:8080 || (echo "Health check failed!" && exit 1)
+                    curl -f http://localhost:8090 || (echo "Health check failed!" && exit 1)
 
                     docker stop ${APP_NAME}_test
                 '''
